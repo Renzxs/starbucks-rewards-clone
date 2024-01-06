@@ -32,7 +32,7 @@ function RewardMainPage() {
 
 function GettingStartedPage() {
 
-  const [step, setStep] = useState([
+  const [step] = useState([
     {
       id: crypto.randomUUID(),
       image: StepNo1,
@@ -81,7 +81,7 @@ function GettingStartedPage() {
 
 function CardOrCardPage() {
 
-  const [collectStarsDialog, setCollectStarsDialog] = useState([
+  const [collectStarsDialog] = useState([
     {
       id: crypto.randomUUID(),
       img_star: Star25,
@@ -128,6 +128,18 @@ function CardOrCardPage() {
             );
           })}
       </div>
+    </div>
+  );
+}
+
+function MagicalRewards() {
+
+  const [magicalRewardsDialog] = useState();
+
+
+  return (
+    <div>
+
     </div>
   );
 }
