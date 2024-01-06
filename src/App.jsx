@@ -15,6 +15,10 @@ import ICGrab from './assets/ic_grabxlaz.svg';
 import Star50 from './assets/star50.svg';
 import OneA from './assets/1A.svg';
 
+import ICFreeFood from './assets/ic_freedrinkfood.svg';
+import ICExclusive from './assets/ic_exclusiveperks.svg';
+import ICMorderpay from './assets/ic_morderpay.svg';
+
 
 function RewardMainPage() {
   return (
@@ -108,19 +112,19 @@ function CardOrCardPage() {
 
   
   return (
-    <div className="w-full bg-WarmWhite p-10 mt-20 ">
+    <div className="w-full bg-WarmWhite p-10 mt-20 pb-20">
       <div className='text-center mb-14'>
         <h1 className='text-[28px] font-bold mb-2 max-sm:text-[20px]'>Cash or card, you collect Stars</h1>
         <p className='text-[15px] font-medium'>No matter how you pay, you can collect Stars. Those Stars add up to (really delicous) Rewards.</p>
       </div>
 
-      <div className='flex flex-col items-center justify-around gap-10 px-20'>
+      <div className='flex flex-col items-center justify-around gap-10 px-20 w-full max-sm:px-0'>
           {collectStarsDialog.map((dialog) => {
             return (
-              <div key={dialog.key} className='flex justify-start align-center gap-10 max-md:gap-5'>
-                <img className="w-[150px] max-md:w-[80px] " src={dialog.img_star} alt={dialog.img_star} />
-                <img className="w-[100px] max-md:w-[50px]" src={dialog.img_action} alt={dialog.img_action} />
-                <div className='w-96 max-md:w-60'>
+              <div key={dialog.key} className='flex justify-start align-center gap-10 max-md:gap-5 flex-1'>
+                <img className="w-[150px] max-md:w-[100px] " src={dialog.img_star} alt={dialog.img_star} />
+                <img className="w-[100px] max-md:w-[80px] max-sm:w-[50px]" src={dialog.img_action} alt={dialog.img_action} />
+                <div className='w-96 max-md:w-[100%]'>
                   <h1 className='font-bold mb-2 text-[20px] max-md:text-[15px]'>{dialog.title}</h1>
                   <p className='font-medium max-md:text-[12px]'>{dialog.description}</p>
                 </div>
@@ -134,11 +138,43 @@ function CardOrCardPage() {
 
 function MagicalRewards() {
 
-  const [magicalRewardsDialog] = useState();
+  const [magicalRewardsDialog] = useState([
+    {
+      id: crypto.randomUUID(),
+      img: ICFreeFood,
+      description: "Get a free drink, pastry or slice of cake with every 100 Stars you collect."
+    },
+    {
+      id: crypto.randomUUID(),
+      img: ICExclusive,
+      description: "Access exclusive perks - like collecting Stars faster with Double Star Days, and a birthday treat."
+    },
+    {
+      id: crypto.randomUUID(),
+      img: ICMorderpay,
+      description: "Enjoy the convenience of ordering ahead using the app."
+    },
+
+    
+  ]);
 
 
   return (
-    <div>
+    <div className='bg-HouseGreen p-10'>
+      <div className='text-center'>
+        <h1 className='text-[30px] font-bold text-white mb-10'>Say hello to magical Rewards.</h1>
+      </div>
+
+      <div className='flex justify-center items-center gap-10 max-md:flex-col'>
+        {magicalRewardsDialog.map((dialog) => {
+          return (
+            <div key={dialog.id} className='flex flex-col justify-center items-center gap-6 flex-1'>
+              <img className='w-[150px]' src={dialog.img} alt={dialog.img} />
+              <p className='text-white text-[18px] text-center w-[50%] font-medium'>{dialog.description}</p>
+            </div>
+          );
+        })}
+      </div>
 
     </div>
   );
@@ -153,6 +189,7 @@ function App() {
       <RewardMainPage />
       <GettingStartedPage />
       <CardOrCardPage />
+      <MagicalRewards />
     </>
   )
 }
