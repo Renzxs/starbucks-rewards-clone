@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         "Starbucks": "#00704a",
-        "HouseGreen": "#1E3932"
+        "HouseGreen": "#1E3932",
+        "WarmWhite" : "#F5F5DC"
       }
     },
   },
