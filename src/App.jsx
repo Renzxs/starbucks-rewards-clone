@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './index.css';
 import NavBar from './components/NavBar';
+import Dropdown from './components/Dropdown';
 
 import StepNo1 from './assets/stepno1.svg';
 import StepNo2 from './assets/stepno2.svg';
@@ -83,7 +84,7 @@ function GettingStartedPage() {
 }
 
 
-function CardOrCardPage() {
+function CashOrCardPage() {
 
   const [collectStarsDialog] = useState([
     {
@@ -121,7 +122,7 @@ function CardOrCardPage() {
       <div className='flex flex-col items-center justify-around gap-10 px-20 w-full max-sm:px-0'>
           {collectStarsDialog.map((dialog) => {
             return (
-              <div key={dialog.key} className='flex justify-start align-center gap-10 max-md:gap-5 flex-1'>
+              <div key={dialog.id} className='flex justify-start align-center gap-10 max-md:gap-5 flex-1'>
                 <img className="w-[150px] max-md:w-[100px] " src={dialog.img_star} alt={dialog.img_star} />
                 <img className="w-[100px] max-md:w-[80px] max-sm:w-[50px]" src={dialog.img_action} alt={dialog.img_action} />
                 <div className='w-96 max-md:w-[100%]'>
@@ -162,15 +163,15 @@ function MagicalRewards() {
   return (
     <div className='bg-HouseGreen p-10'>
       <div className='text-center'>
-        <h1 className='text-[30px] font-bold text-white mb-10'>Say hello to magical Rewards.</h1>
+        <h1 className='text-[30px] font-bold text-white mb-10 max-sm:text-[25px]'>Say hello to magical Rewards.</h1>
       </div>
 
-      <div className='flex justify-center items-center gap-10 max-md:flex-col'>
+      <div className='flex justify-center items-center gap-10 max-md:flex-col pb-10'>
         {magicalRewardsDialog.map((dialog) => {
           return (
             <div key={dialog.id} className='flex flex-col justify-center items-center gap-6 flex-1'>
-              <img className='w-[150px]' src={dialog.img} alt={dialog.img} />
-              <p className='text-white text-[18px] text-center w-[50%] font-medium'>{dialog.description}</p>
+              <img className='w-[150px] max-sm:w-[100px]' src={dialog.img} alt={dialog.img} />
+              <p className='text-white text-[18px] text-center w-[50%] font-medium max-sm:w-full'>{dialog.description}</p>
             </div>
           );
         })}
@@ -180,6 +181,60 @@ function MagicalRewards() {
   );
 }
 
+function FrequentlyAskedQ() {
+  const [questions, setQuestion] = useState([
+    {
+      id: crypto.randomUUID(),
+      title: "How do I earn a Star?",
+      description: "Starting October 17, 2023, you can collect Stars by paying with your registered Starbucks card (or your registered Card in the mobile app) or thru other payment methods like cash, credit/debit cards, select e-wallets, Starbucks gift certificate or Starbucks e-Gift. You will collect 1 Star for every Php25 spent on beverage, food or merchandise purchased from our stores using a Starbucks Card. Pay with cash, credit/debit cards, select e-wallets, Starbucks gift certificate or Starbucks e-Gift and you can collect 1 Star for every Php50 spent. Stars cannot be earned on purchases of gift certificate, Starbucks Cards or Starbucks Card reloads."
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "What rewards can I redeem with Stars?",
+      description: "Every 100 Stars you collect converts to a Reward Voucher that can be used to redeem your choice of a handcrafted beverage of any size (excluding premium Starbucks Reserve coffee and ice cream beverages) or a food item from our bakery and cake menu. Add-ons in beverages will be paid for by the member. Only 1 reward can be redeemed per transaction."
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "Do Stars expires?",
+      description: "Every 100 Stars you collect converts to a Reward Voucher that can be used to redeem your choice of a handcrafted beverage of any size (excluding premium Starbucks Reserve coffee and ice cream beverages) or a food item from our bakery and cake menu. Add-ons in beverages will be paid for by the member. Only 1 reward can be redeemed per transaction."
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "Do Rewards Voucher expire?",
+      description: "Every 100 Stars you collect converts to a Reward Voucher that can be used to redeem your choice of a handcrafted beverage of any size (excluding premium Starbucks Reserve coffee and ice cream beverages) or a food item from our bakery and cake menu. Add-ons in beverages will be paid for by the member. Only 1 reward can be redeemed per transaction."
+    },
+  ]);
+
+  return (
+    <div className='w-full  p-20 h-fit max-sm:p-10 flex flex-col justify-center items-center'>
+      <div className='w-[60%] border-b-2 border-gray-300 pb-16 mb-10 max-md:w-[100%] '>
+        <h1 className='text-[30px] font-medium mb-10'>Frequently Asked Questions</h1>
+        <div className='border-2 border-gray-300 py-[2px] rounded-md'>
+            {questions.map((question) => {
+                return (
+                  <Dropdown key={question.id} id={question.id} title={question.title} description={question.description}/>
+                )
+              })}
+        </div>
+      </div>
+
+      <div className='flex flex-col justify-start items-start w-[50%] max-md:w-[90%]'> 
+        <h1 className='text-[30px] font-medium mb-2'>More Questions?</h1>
+        <p className='font-medium text-[18px]'>We want to help in any way we can. We’ve answered the most commonly asked questions. <a className='font-bold underline' href="#">right over here.</a></p>
+        <p className='mb-6 font-medium text-[18px]'>If you can't find what you're looking for, here's how to <a className='font-bold underline' href="#">get in touch</a> with us.</p>
+
+        <h1 className='text-[30px] font-medium mb-2'>Terms of Use</h1>
+        <p className='font-medium text-[18px]'>For full details on Stars and Starbucks® Rewards program, read our terms of use <a className='font-bold underline' href="">here</a>.</p>
+        <p className='font-medium text-[18px]'>DTI Fair Trade Permit No. FTEB-177222 Series of 202</p>
+      </div>
+      
+    </div>
+  );
+}
+
+
+
+
 
 
 function App() {
@@ -188,8 +243,9 @@ function App() {
       <NavBar />
       <RewardMainPage />
       <GettingStartedPage />
-      <CardOrCardPage />
+      <CashOrCardPage />
       <MagicalRewards />
+      <FrequentlyAskedQ />
     </>
   )
 }
