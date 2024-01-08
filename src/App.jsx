@@ -20,6 +20,8 @@ import ICFreeFood from './assets/ic_freedrinkfood.svg';
 import ICExclusive from './assets/ic_exclusiveperks.svg';
 import ICMorderpay from './assets/ic_morderpay.svg';
 
+import { ChevronUp, ChevronRight } from 'lucide-react';
+
 
 function RewardMainPage() {
   return (
@@ -206,7 +208,7 @@ function FrequentlyAskedQ() {
   ]);
 
   return (
-    <div className='w-full  p-20 h-fit max-sm:p-10 flex flex-col justify-center items-center'>
+    <div className='w-full bg-WarmWhite p-20 h-fit max-sm:p-10 flex flex-col justify-center items-center'>
       <div className='w-[60%] border-b-2 border-gray-300 pb-16 mb-10 max-md:w-[100%] '>
         <h1 className='text-[30px] font-medium mb-10'>Frequently Asked Questions</h1>
         <div className='border-2 border-gray-300 py-[2px] rounded-md'>
@@ -220,11 +222,11 @@ function FrequentlyAskedQ() {
 
       <div className='flex flex-col justify-start items-start w-[50%] max-md:w-[90%]'> 
         <h1 className='text-[30px] font-medium mb-2'>More Questions?</h1>
-        <p className='font-medium text-[18px]'>We want to help in any way we can. We’ve answered the most commonly asked questions. <a className='font-bold underline' href="#">right over here.</a></p>
+        <p className='font-medium text-[18px] mb-4'>We want to help in any way we can. We’ve answered the most commonly asked questions. <a className='font-bold underline' href="#">right over here.</a></p>
         <p className='mb-6 font-medium text-[18px]'>If you can't find what you're looking for, here's how to <a className='font-bold underline' href="#">get in touch</a> with us.</p>
 
         <h1 className='text-[30px] font-medium mb-2'>Terms of Use</h1>
-        <p className='font-medium text-[18px]'>For full details on Stars and Starbucks® Rewards program, read our terms of use <a className='font-bold underline' href="">here</a>.</p>
+        <p className='font-medium text-[18px] mb-4'>For full details on Stars and Starbucks® Rewards program, read our terms of use <a className='font-bold underline' href="">here</a>.</p>
         <p className='font-medium text-[18px]'>DTI Fair Trade Permit No. FTEB-177222 Series of 202</p>
       </div>
       
@@ -232,7 +234,65 @@ function FrequentlyAskedQ() {
   );
 }
 
+function Footer() {
+  return (
+    <div className='py-10 overflow-hidden z-0'>
+      <div className='flex flex-wrap justify-start items-start gap-10  px-20 basis-[500px] max-sm:p-10 max-sm:flex-col relative mb-10'>
+        <div className='flex-1 max-sm:w-full'>
+          <div className='flex justify-between items-center w-full mb-6'>
+            <h1 className='font-bold text-[30px]'>About Us</h1>
+            <ChevronRight className='hidden max-sm:block'></ChevronRight>
+          </div>
+          <div className='max-sm:h-0 overflow-hidden'>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Our Company</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Stories and News</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Customer Service</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Careers</a></p>
+          </div>
+        </div>
 
+        <div className='flex-1 max-sm:w-full'>
+          <div className='flex justify-between items-center w-full mb-6'>
+            <h1 className='font-bold text-[30px]'>Order Online</h1>
+            <ChevronRight className='hidden max-sm:block'></ChevronRight>
+          </div>
+          <div className='max-sm:h-0 overflow-hidden '>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Order on the App</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Delivery</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Send eGifts</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Grap Partnership</a></p>
+          </div>
+        </div>
+
+        <div className='flex-1 max-sm:w-full '>
+          <div className='flex justify-between items-center w-full mb-6'>
+            <h1 className='font-bold text-[30px]'>Rewards</h1>
+            <ChevronRight className='hidden max-sm:block'></ChevronRight>
+          </div>
+          <div className='max-sm:h-0 overflow-hidden'>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">My Account</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">View Transactions</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">Reload</a></p>
+            <p><a className='text-[20px] font-medium text-gray-500' href="#">FAQs</a></p>
+          </div>
+        </div>
+
+        <div  className='flex-1'>
+          <h1 className='font-bold text-[30px]'><a href="">Social Impact</a></h1>
+        </div>
+
+        <div  className='flex-grow'>
+          <h1 className='font-bold text-[30px]'><a href="">Promotions</a></h1>
+        </div>
+
+        <h1 className='absolute right-0 top-20 font-black text-[25px] rotate-90 max-lg:hidden'>STARBUCKS</h1>
+      </div>
+
+      <hr className='border-2 border-gray-300' />
+
+    </div>
+  );
+}
 
 
 
@@ -246,6 +306,7 @@ function App() {
       <CashOrCardPage />
       <MagicalRewards />
       <FrequentlyAskedQ />
+      <Footer />
     </>
   )
 }

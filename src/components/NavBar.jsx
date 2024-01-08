@@ -77,7 +77,7 @@ function NavBar() {
     return (
         <>
             <NavContainer/>
-            <div className='sticky top-0 z-199 w-full p-4 pl-14 max-lg:pl-10 bg-HouseGreen max-md:text-[15px] flex justify-between items-center'>
+            <div className='sticky top-0 z-200 w-full p-4 pl-14 max-lg:pl-10 bg-HouseGreen max-md:text-[15px] flex justify-between items-center'>
                 <h1 className='text-white font-black '>STARBUCKS® REWARDS</h1>
                 <button className='text-white font-medium border-2 border-white px-[15px] py-[5px] rounded-[20px] mr-[10px] hidden max-lg:block'>Join in the app</button>
             </div>
