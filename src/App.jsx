@@ -209,7 +209,7 @@ function FrequentlyAskedQ() {
 
   return (
     <div className='w-full bg-WarmWhite p-20 h-fit max-sm:p-10 flex flex-col justify-center items-center'>
-      <div className='w-[60%] border-b-2 border-gray-300 pb-16 mb-10 max-md:w-[100%] '>
+      <div className='w-[60%] border-b-2 border-gray-300 pb-16 mb-10 max-lg:w-[100%] '>
         <h1 className='text-[30px] font-medium mb-10'>Frequently Asked Questions</h1>
         <div className='border-2 border-gray-300 py-[2px] rounded-md'>
             {questions.map((question) => {
@@ -220,7 +220,7 @@ function FrequentlyAskedQ() {
         </div>
       </div>
 
-      <div className='flex flex-col justify-start items-start w-[50%] max-md:w-[90%]'> 
+      <div className='flex flex-col justify-start items-start w-[50%] max-lg:w-[90%]'> 
         <h1 className='text-[30px] font-medium mb-2'>More Questions?</h1>
         <p className='font-medium text-[18px] mb-4'>We want to help in any way we can. We’ve answered the most commonly asked questions. <a className='font-bold underline' href="#">right over here.</a></p>
         <p className='mb-6 font-medium text-[18px]'>If you can't find what you're looking for, here's how to <a className='font-bold underline' href="#">get in touch</a> with us.</p>
@@ -290,12 +290,13 @@ function Footer() {
 
       <hr className='border-2 border-gray-300' />
 
+      <div className='pt-6 px-10 text-end'>
+        <p>&copy; 2024 Starbucks Coffee Company. All rights reserved.</p>
+      </div>
+
     </div>
   );
 }
-
-
-
 
 function App() {
   return (
